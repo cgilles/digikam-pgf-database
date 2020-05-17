@@ -170,7 +170,28 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
 
 echo -e "\n"
 
+cd $ORIG_WD
+mkdir -p build
+cd build
+
 #################################################################################################
+
+${MXE_BUILD_TARGETS}-cmake .. \
+                           -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN} \
+                           -DMXE_BUILDROOT=${MXE_BUILDROOT} \
+                           -DMXE_ARCHBITS=${MXE_ARCHBITS} \
+                           -DMXE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX} \
+                           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+                           -DCMAKE_COLOR_MAKEFILE=ON \
+                           -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN} \
+                           -DCMAKE_FIND_PREFIX_PATH=${CMAKE_PREFIX_PATH} \
+                           -DCMAKE_SYSTEM_INCLUDE_PATH=${CMAKE_PREFIX_PATH}/include \
+                           -DCMAKE_INCLUDE_PATH=${CMAKE_PREFIX_PATH}/include \
+                           -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib \
+                           -DZLIB_ROOT=${CMAKE_PREFIX_PATH}
+
+
+${MXE_BUILD_TARGETS}-cmake --build .
 
 export PATH=$ORIG_PATH
 
