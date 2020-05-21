@@ -100,7 +100,7 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$MXE_BUILDROOT/usr/bin:$MXE_INSTALL_PREFIX/qt5/bin:$PATH
-
+if [ ] ; then
 #################################################################################################
 # Check if a previous bundle already exist
 
@@ -169,7 +169,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qtbase
 
 echo -e "\n"
-
+fi
 cd $ORIG_WD
 mkdir -p build
 cd build
