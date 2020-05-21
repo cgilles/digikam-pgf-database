@@ -57,11 +57,9 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    QByteArray blob(file.size(), '\x00');
+    QByteArray data(file.size(), '\x00');
     QDataStream stream(&file);
-    stream.readRawData(blob.data(), blob.size());
-
-    QByteArray data = qUncompress(blob);
+    stream.readRawData(data.data(), data.size());
 
     // PGF => QImage conversion
 
