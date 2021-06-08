@@ -8,7 +8,8 @@ To compile this code from Windows, you need to solve dependencies for MXE cross 
 
 Two scripts are provided to compile under linux (bootstrap-linux.sh) and cross compile to Windows using MXE (bootstrap-mxe.sh).
 
-To convert blob data from digiKam database, just pass the binary file to the cli tool. It will be converted as PNG image.
+To convert blob data from digiKam database, just pass the PGF blob extracted from the digiKam database to the cli tool.
+It will be converted as PNG image.
 
 Note: a windows 64 bits executable cross-compiled under Linux as static program is available in bin sub-directory.
       It can be used as well without external dependency.
