@@ -42,8 +42,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "loadpgfdata - Load PGF blob data and save to PNG";
-        qDebug() << "Usage: <pgf_blob_file>";
+        qInfo() << "loadpgfdata - Load PGF blob data and save to PNG";
+        qInfo() << "Usage: <pgf_blob_file>";
         return -1;
     }
 
@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 
     if (!file.open(QIODevice::ReadOnly))
     {
-        qDebug() << "Cannot open PGF file to read...";
+        qWarning() << "Cannot open PGF file to read...";
         return -1;
     }
 
@@ -68,11 +68,13 @@ int main(int argc, char** argv)
 
     if (!PGFUtils::readPGFImageData(data, img))
     {
-        qDebug() << "loadPGFScaled failed...";
+        qWarning() << "loadPGFScaled failed...";
         return -1;
     }
 
     img.save(file.fileName() + QString::fromUtf8("-converted.png"), "PNG");
+
+    qInfo() << file.fileName() << "converted as PNG";
 
     return 0;
 }

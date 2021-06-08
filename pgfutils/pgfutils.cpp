@@ -77,7 +77,7 @@ bool readPGFImageData(const QByteArray& data,
     {
         if (data.isEmpty())
         {
-            qDebug() << "PGFUtils: PGF image data to decode : size is null";
+            qWarning() << "PGFUtils: PGF image data to decode : size is null";
 
             return false;
         }
@@ -86,7 +86,7 @@ bool readPGFImageData(const QByteArray& data,
 
         if (verbose)
         {
-            qDebug() << "PGFUtils: image data stream size is : " << stream.GetSize();
+            qInfo() << "PGFUtils: image data stream size is : " << stream.GetSize();
         }
 
         CPGFImage pgfImg;
@@ -99,12 +99,12 @@ bool readPGFImageData(const QByteArray& data,
 
         if (verbose)
         {
-            qDebug() << "PGFUtils: PGF image is open";
+            qInfo() << "PGFUtils: PGF image is open";
         }
 
         if (pgfImg.Channels() != 4)
         {
-            qDebug() << "PGFUtils: PGF channels not supported";
+            qWarning() << "PGFUtils: PGF channels not supported";
 
             return false;
         }
@@ -114,7 +114,7 @@ bool readPGFImageData(const QByteArray& data,
 
         if (verbose)
         {
-            qDebug() << "PGFUtils: PGF image is read";
+            qInfo() << "PGFUtils: PGF image is read";
         }
 
         if (QSysInfo::ByteOrder == QSysInfo::BigEndian)
@@ -130,7 +130,7 @@ bool readPGFImageData(const QByteArray& data,
 
         if (verbose)
         {
-            qDebug() << "PGFUtils: PGF image is decoded";
+            qInfo() << "PGFUtils: PGF image is decoded";
         }
     }
     catch (IOException& e)
@@ -142,7 +142,7 @@ bool readPGFImageData(const QByteArray& data,
             err -= AppError;
         }
 
-        qDebug() << "PGFUtils: Error running libpgf (" << err << ")!";
+        qWarning() << "PGFUtils: Error running libpgf (" << err << ")!";
 
         return false;
     }
