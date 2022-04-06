@@ -1,5 +1,5 @@
-This small program is a simple converter to procress digiKam database thumbnail images to PNG.
-----------------------------------------------------------------------------------------------
+This small program is a simple converter to process digiKam database PGF blob images to PNG.
+--------------------------------------------------------------------------------------------
 
 digiKam store thumbnails with wavelets PGF codec to reduce size with a very good quality, better than JPEG.
 
