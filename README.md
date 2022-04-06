@@ -6,7 +6,9 @@ digiKam store thumbnails with wavelets PGF codec to reduce size with a very good
 To compile this code, you need CMake and Qt5 Core and Gui modules under Linux. There is no dependency to digiKam core.
 To compile this code from Windows, you need to solve dependencies for MXE cross compiler.
 
-Two scripts are provided to compile under linux (bootstrap-linux.sh) and cross compile to Windows using MXE (bootstrap-mxe.sh).
+Two bash scripts are provided to compile under linux (bootstrap-linux.sh) and cross compile to Windows using MXE (bootstrap-mxe.sh).
+
+To extract PGF thumbnails blobs from digiKam database, look the bash script 'export_thumbnails.sh'.
 
 To convert blob data from digiKam database, just pass the PGF blob extracted from the digiKam database to the cli tool.
 It will be converted as PNG image.
