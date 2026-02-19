@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Copyright (c) 2021, Dmitri Popov, <dmpop@linux.com>
+# SPDX-FileCopyrightText: (c) 2021, Dmitri Popov, <dmpop at linux dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
+# SPDX-License-Identifier: BSD-3-Clause
 
 dir="$HOME/digikam-thumbnails"
 if [ -z "$1" ]; then

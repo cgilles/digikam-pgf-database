@@ -11,6 +11,22 @@ The Sourceforge URL of our project is: http://sourceforge.net/projects/libpgf
 =============================
 Release Notes
 
+Version 7.21.7, (Thu, 18 Feb 2021)
+------------------------------------
+
+1. The new version is a minor bug fix of versions 7.15.25 to 7.21.2.
+
+2. This bug fix for ROI decoding only. This bug fix is necessary if several 
+   Read() and ResetStreamPos() operations are called with the same PGFimage
+   object after a single Open() call.
+
+
+Version 7.21.2, (Sun, 17 Jan 2021)
+------------------------------------
+
+1. The new version is a documentation and build tool update of version 7.19.3.
+
+
 Version 7.19.3, (Tue, 15 Jan 2019)
 ------------------------------------
 
@@ -108,7 +124,7 @@ case you have left shifted the 14 bits to be the most significant 14 bits,
 then you should set usedBitsPerChannel=14. This will increase the compression 
 ratio without any drawbacks, because the 14 bits are internally right shifted. 
 On the other side, if the 14 bits are the least significant bits in 
-your 16 bit pixel format, then you shoulden’t set usedBitsPerChannel. It will 
+your 16 bit pixel format, then you shouldn't set usedBitsPerChannel. It will 
 be automatically set to 16, but this is no problem, since the not used most 
-significant bits per pixel are never coded at all. So, in both cases the same 
+significant bits per pixel are never encoded at all. So, in both cases the same 
 compression ratio will result.
